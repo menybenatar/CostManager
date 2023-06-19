@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-
 // Import routers
 const addcostRouter = require('./routes/addcost');
 const aboutRouter = require('./routes/about');
@@ -12,8 +11,10 @@ const reportRouter = require('./routes/report');
 const app = express();
 
 // Connect to MongoDB
-const mongoose = require("mongoose");
-mongoose.connect('mongodb+srv://menybenatar:dYGBZOjXdAVQAyTk@cluster0.yjkfin5.mongodb.net/?retryWrites=true&w=majority')
+const mongoose = require('mongoose');
+const mongooseConnection = 'mongodb+srv://menybenatar:dYGBZOjXdAVQAyTk@cluster0.yjkfin5.mongodb.net/?retryWrites=true&w=majority';
+//`mongodb+srv://menybenatar:dYGBZOjXdAVQAyTk@cluster0.yjkfin5.mongodb.net/`;
+mongoose.connect(mongooseConnection)
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Error connecting to MongoDB:', err));
 

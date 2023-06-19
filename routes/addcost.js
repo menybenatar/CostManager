@@ -8,7 +8,7 @@ const utilsNamespace = require("../utils/utils");
 /**
  * Handle the POST request to add a new cost
  */
-router.post('/', async function (req, res, next) {
+router.post('', async function (req, res, next) {
     try {
         const { user_id, year, month, day, description, category, sum } = req.body;
 
