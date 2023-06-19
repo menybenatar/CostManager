@@ -3,7 +3,7 @@ const router = express.Router();
 const cost = require('../models/costs');
 const report = require('../models/report');
 const users = require('../models/users');
-const utils = require("utils/utils");
+const utils = require("../utils/utils");
 
 router.post('', async function (req, res, next) {
     try {
