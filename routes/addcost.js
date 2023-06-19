@@ -12,7 +12,7 @@ router.post('', async function (req, res, next) {
         // Find the user by user_id
         const user = await users.findOne({ id: user_id });
 
-        if (user === null) {
+        if (!user) {
             // If the user is not found, throw an error
             throw new Error('The user does not exist!');
         }
