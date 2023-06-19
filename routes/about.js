@@ -8,7 +8,7 @@ const developersArr = [
 ];
 
 router.get('', function(req, res, next) {
-    res.status(200).json(developersArr);
+    res.status(200).json(developersArr);  // Respond with the developers array as JSON
 });
 
 module.exports = router;

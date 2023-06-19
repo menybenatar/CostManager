@@ -3,7 +3,7 @@ const router = express.Router();
 const cost = require('../models/costs');
 const report = require('../models/report');
 const users = require('../models/users');
-const utilsNamespace = require("../utils/utils");
+const utils = require("../utils/utils");
 
 router.get('', async function (req, res, next) {
     try {
@@ -13,13 +13,13 @@ router.get('', async function (req, res, next) {
             throw new Error('Missing required parameters');
         }
         // validate the date
-        if (!utilsNamespace.validateDate(parseInt(year), parseInt(month), 1)) {
+        if (!utils.validateDate(parseInt(year), parseInt(month), 1)) {
             throw new Error('Date invalid');
         }
         // validate if the user exists
         const user = await users.findOne({ id: user_id });
         if (!user) {
-            throw new Error( "User doesn't exist in the DB");
+            throw new Error('The user does not exist!');
         }
 
 
