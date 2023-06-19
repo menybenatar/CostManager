@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+
 // Import routers
 const addcostRouter = require('./routes/addcost');
 const aboutRouter = require('./routes/about');
@@ -12,7 +13,7 @@ const app = express();
 
 // Connect to MongoDB
 const mongoose = require('mongoose');
-const mongooseConnection = 'mongodb+srv://menybenatar:dYGBZOjXdAVQAyTk@cluster0.yjkfin5.mongodb.net/CostManger';
+const mongooseConnection = 'mongodb+srv://menybenatar:dYGBZOjXdAVQAyTk@cluster0.yjkfin5.mongodb.net/costManager';
 mongoose.connect(mongooseConnection)
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Error connecting to MongoDB:', err));
@@ -25,13 +26,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Register routers
-app.use('/addcost', addcostRouter);
-app.use('/about', aboutRouter);
-app.use('/report', reportRouter);
+app.use('/addcost', addcostRouter);   // Router for '/addcost' path
+app.use('/about', aboutRouter);       // Router for '/about' path
+app.use('/report', reportRouter);     // Router for '/report' path
 
 // Catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  next(createError(404));
+  next(createError(404));   // If no matching route is found, create a 404 error and pass it to the error handler
 });
 
 // Error handler
@@ -42,7 +43,7 @@ app.use(function(err, req, res, next) {
 
   // Render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error');   // Render the 'error' template and send it as a response
 });
 
 module.exports = app;
