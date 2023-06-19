@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+// Define a schema for the costs data
 const costsSchema = new Schema({
     user_id: {
         type: Number,
@@ -41,12 +42,7 @@ const costsSchema = new Schema({
         type: Number
     }
 });
-
-
-
-
+// Create a model based on the schema
 const costs = mongoose.model('costs',costsSchema);
-
-
 
 module.exports = costs;

@@ -65,7 +65,7 @@ router.get('', async function (req, res, next) {
 
     } catch (error) {
         // Handle any errors that occur during the process
-        res.status(500).json({ error: error.message });
+        res.status(400).json({ error: error.message });
     }
 });
 
