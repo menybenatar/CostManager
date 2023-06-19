@@ -4,9 +4,7 @@ const cost = require('../models/costs');
 const report = require('../models/report');
 const users = require('../models/users');
 const utilsNamespace = require("../utils/utils");
-/**
- * Handle the GET request to get report
- */
+
 router.get('', async function (req, res, next) {
     try {
         const { user_id, year, month } = req.query;

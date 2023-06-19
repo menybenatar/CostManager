@@ -12,8 +12,7 @@ const app = express();
 
 // Connect to MongoDB
 const mongoose = require('mongoose');
-const mongooseConnection = 'mongodb+srv://menybenatar:dYGBZOjXdAVQAyTk@cluster0.yjkfin5.mongodb.net/?retryWrites=true&w=majority';
-//`mongodb+srv://menybenatar:dYGBZOjXdAVQAyTk@cluster0.yjkfin5.mongodb.net/`;
+const mongooseConnection = 'mongodb+srv://menybenatar:dYGBZOjXdAVQAyTk@cluster0.yjkfin5.mongodb.net/CostManger';
 mongoose.connect(mongooseConnection)
     .then(() => console.log('Connected to MongoDB'))
     .catch(err => console.error('Error connecting to MongoDB:', err));
