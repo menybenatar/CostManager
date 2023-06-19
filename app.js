@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
 // Import routers
-const addCostRouter = require('./routes/addCost');
+const addcostRouter = require('./routes/addcost');
 const aboutRouter = require('./routes/about');
 const reportRouter = require('./routes/report');
 
@@ -26,7 +26,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Register routers
-app.use('/addCost', addCostRouter);   // Router for '/addCost' path
+app.use('/addcost', addcostRouter);   // Router for '/addcost' path
 app.use('/about', aboutRouter);       // Router for '/about' path
 app.use('/report', reportRouter);     // Router for '/report' path
 
